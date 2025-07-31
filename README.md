@@ -31,6 +31,8 @@ Relative Strength Index (RSI)
                       try:
                           stock = yf.Ticker(ticker)
                           info = stock.info
+
+                          
         hist['RSI'] = compute_rsi(hist)
         rsi_latest = hist['RSI'].iloc[-1] if len(hist) >= 14 else None
         ma_21 = hist["Close"].rolling(window=21).mean().iloc[-1] if len(hist) >= 21 else None
